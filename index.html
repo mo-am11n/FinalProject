@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,6 +36,20 @@
         </nav>
 
         <!-- mobile menu -->
+        <nav class="Mobile-Menu" data-visible="false">
+            <div class="navigation">
+                <ul class="list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Classes</a></li>
+                    <li><a href="#">Schedules</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <button class="mobilebutton">Signup</button>
+            </div>
+
+        </nav>
     
     
     </header>
@@ -360,7 +375,7 @@
     </section>
 
     <!-- page-6 -->
-     <section class="trainers">
+    <section class="trainers">
         <div class="container">
             <!-- up-team -->
              <div class="trainers-info">
@@ -502,10 +517,10 @@
                 </div>
              </div>
         </div>
-     </section>
+    </section>
 
-     <!-- page-7 -->
-      <section class="contact-us">
+    <!-- page-7 -->
+    <section class="contact-us">
         <div class="container-fluid">
             <div class="twins">
                 <!-- map -->
@@ -552,10 +567,10 @@
                  </div>
             </div>
         </div>
-      </section>
+    </section>
 
-      <!-- footer -->
-       <footer>
+    <!-- footer -->
+    <footer>
         <div class="container">
             <div class="footer-text">
                 <div class="footer-items">
@@ -565,7 +580,31 @@
                 </div>
             </div>
         </div>
-       </footer>
+    </footer>
+
+
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const icons = document.querySelectorAll("i");
+
+        hamburger.addEventListener("click", function (event) {
+            const isVisible = mobileMenu.getAttribute('data-visible');
+            if (isVisible == "true") {
+                // qari hiding
+                mobileMenu.setAttribute('data-visible', "false");
+                icons[0].setAttribute('data-visible', "true");
+                icons[1].setAttribute('data-visible', "false");
+            } else if (isVisible == "false") {
+                // soo bandhig showing
+                mobileMenu.setAttribute('data-visible', "true");
+                icons[0].setAttribute('data-visible', "false");
+                icons[1].setAttribute('data-visible', "true");
+            }
+        });
+
+    </script>
     
     
 
