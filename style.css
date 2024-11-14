@@ -591,7 +591,12 @@ video {
     color: #ed563b;
     cursor: pointer;
 }
-
+[data-visible='true']{
+    display: block;
+}
+[data-visible='false']{
+    display: none;
+}
 @media (max-width: 768px) {
     .menu {
         display: none;
@@ -629,12 +634,12 @@ video {
 
     .Mobile-Menu{
         /* halkaan ka hagaaji */
-        display: none;
-        /* display: flex; */
+        /* display: none; */
+        display: flex;
         justify-content: center;
-        position: relative;
+        position: fixed;
         inset: 0 0 0 0;
-        top: 10%;
+        top: 8%;
         right: 6%;
         left: 6%;
         background-color:#f7f7f7;
@@ -647,6 +652,13 @@ video {
         font-size: 20px;
         list-style: none;
         transition: background-color 0.3s ease;    
+    }
+
+    .Mobile-Menu[data-visible='true'], i[data-visible='true']{
+        display: block;
+    }
+    .Mobile-Menu[data-visible='false'], i[data-visible='false']{
+        display: none;
     }
 
     .Mobile-Menu li a{
@@ -662,7 +674,7 @@ video {
         padding: 1rem;
         font-size: 18px;
         font-weight: 400;
-        margin-inline: 30%;
+        margin-inline: 41%;
         cursor: pointer;
     }
 
